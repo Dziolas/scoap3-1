@@ -21,8 +21,10 @@ from invenio.bibdocfilecli import bibupload_ffts
 from invenio.bibtask import write_message, task_sleep_now_if_required
 from invenio.errorlib import register_exception
 
+
 def get_broken_recids():
     return perform_request_search(p="filetype:xml and not filetype:pdf", of='intbitset')
+
 
 def get_last_pdf_for_record(bibrecdocs):
     bibdoc = bibrecdocs.list_bibdocs()[0]
@@ -35,6 +37,7 @@ def get_last_pdf_for_record(bibrecdocs):
             ## This version does not have any PDF
             continue
 
+
 def build_fft(bibdocfile):
     return [{
         'url': bibdocfile.get_path(),
@@ -42,12 +45,17 @@ def build_fft(bibdocfile):
         'format': bibdocfile.get_format(),
     }]
 
+
 def bst_fix_ffts(debug=0):
     debug = bool(int(debug))
     ffts = {}
     for recid in get_broken_recids():
         task_sleep_now_if_required(can_stop_too=True)
         write_message("Fixing %s" % recid)
+        docs = BibRecDocs(recid)
+        if docs.deleted_p:
+            write_message("Record %s is DELETED." % recid)
+            continue
         try:
             ffts[recid] = build_fft(get_last_pdf_for_record(BibRecDocs(recid)))
         except:
