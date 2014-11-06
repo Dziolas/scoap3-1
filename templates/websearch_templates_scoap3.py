@@ -600,14 +600,6 @@ class Template(DefaultTemplate):
                                   css_class='address'),
                 }
 
-        ## sixthly, print tools box:
-        ## TODO
-        # if loggedin:
-        out += """<div>
-                      <h3>SCOAP3 special tools.</h3>
-                  </div>
-               """
-
         ## last but not least, print end of search box:
         out += """</form>"""
         return out
@@ -1017,6 +1009,14 @@ class Template(DefaultTemplate):
             out += """</td></tr>"""
             i += 1
         out += "</tbody></table>"
+
+        ## sixthly, print tools box:
+        ## TODO
+        # if loggedin:
+        out += """<div>
+                      <h3>SCOAP3 special tools.</h3>
+                  </div>
+               """
 
         return out
 
