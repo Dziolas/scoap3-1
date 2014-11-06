@@ -1014,7 +1014,7 @@ class Template(DefaultTemplate):
         ## TODO
         # if loggedin:
         out += """<div>
-                      <h3>SCOAP3 special tools.</h3>
+                      <h3>SCOAP3 special tools</h3>
                   </div>
                """
 
