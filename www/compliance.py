@@ -41,7 +41,10 @@ JOURNALS_PDFA = {'ELS/NPB': 'Nuclear Physics B',
                  'OUP/PTEP': 'Progress of Theoretical and Experimental Physics'}
 JOURNALS_NO_PDFA = {'IOP/CPC': 'Chinese Physics C',
                     'IOP/JCAP': 'Journal of Cosmology and Astroparticle Physics',
-                    'IOP/NJP': 'New Journal of Physics'}
+                    'IOP/NJP': 'New Journal of Physics',                    
+                    'APS/PRC': 'Physical Review C',
+                    'APS/PRD': 'Physical Review D',
+                    'APS/PRL': 'Physical Review Letters'}
 JOURNALS_NO_XML = {'JAG/ACTA': 'Acta'}
 
 compliance_check_values = {}

@@ -38,7 +38,8 @@ CFG_SCOAP3_DOIS = {
     "10.5506": re.compile(r"^10\.5506\/APhysPolB\.", re.I),  # Acta
     "10.1093": re.compile(r"^10\.1093\/ptep\/", re.I),  # Oxford
     "10.1140": re.compile(r"^10\.1140\/epjc\/", re.I),  # Springer EPJC
-    "10.1007": re.compile(r"^10\.1007\/JHEP", re.I)  # Springer Sissa
+    "10.1007": re.compile(r"^10\.1007\/JHEP", re.I),  # Springer Sissa
+    "10.1103": re.compile(r"^10\.1103\/(physrevc|physrevd|physrevlett)", re.I) # APS journals
 }
 
 
